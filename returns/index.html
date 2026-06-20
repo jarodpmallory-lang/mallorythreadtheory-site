@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Returns &amp; Exchanges — Mallory Thread Theory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F5F0E8; --olive: #5B6B32; --olive-light: #8B9A5A;
+      --olive-dark: #3D4A20; --text: #2E2E2E; --text-muted: #6B6B6B;
+    }
+    body { background: var(--cream); color: var(--text); font-family: 'Lato', sans-serif; line-height: 1.7; }
+    nav {
+      background: var(--cream); border-bottom: 1px solid rgba(91,107,50,0.2);
+      padding: 16px 40px; display: flex; align-items: center;
+      justify-content: space-between; position: sticky; top: 0; z-index: 100;
+    }
+    nav .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    nav .logo-mark img { height: 48px; width: 48px; object-fit: contain; }
+    nav .brand-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--olive-dark); font-weight: 600; letter-spacing: 0.03em; }
+    nav .nav-links { display: flex; gap: 32px; list-style: none; }
+    nav .nav-links a { text-decoration: none; color: var(--olive); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    nav .nav-links a:hover { color: var(--olive-dark); }
+    .page-header { background: linear-gradient(135deg, #E8E0D0 0%, #F5F0E8 100%); padding: 56px 40px 48px; text-align: center; border-bottom: 1px solid rgba(91,107,50,0.15); }
+    .page-header .eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--olive-light); margin-bottom: 12px; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--olive-dark); }
+    .content { max-width: 720px; margin: 0 auto; padding: 64px 40px; }
+    .content h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--olive-dark); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(91,107,50,0.2); }
+    .content p { color: var(--text-muted); font-size: 0.975rem; margin-bottom: 16px; }
+    .policy-block { background: #fff; border: 1px solid rgba(91,107,50,0.15); border-radius: 4px; padding: 28px 32px; margin-bottom: 36px; }
+    .policy-block ul { list-style: none; padding: 0; }
+    .policy-block ul li { padding: 10px 0; border-bottom: 1px solid rgba(91,107,50,0.1); font-size: 0.95rem; color: var(--text); display: flex; align-items: flex-start; gap: 12px; }
+    .policy-block ul li:last-child { border-bottom: none; }
+    .policy-block ul li::before { content: "✓"; color: var(--olive); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .badge-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+    .badge { background: var(--olive); color: var(--cream); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 18px; border-radius: 2px; }
+    .timeframe-callout { background: rgba(91,107,50,0.08); border-left: 3px solid var(--olive); padding: 16px 20px; margin-bottom: 32px; border-radius: 0 4px 4px 0; }
+    .timeframe-callout strong { color: var(--olive-dark); display: block; margin-bottom: 4px; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .timeframe-callout p { margin: 0; color: var(--text); font-size: 0.95rem; }
+    .section-gap { margin-top: 48px; }
+    .contact-block { background: var(--olive-dark); color: var(--cream); border-radius: 4px; padding: 28px 32px; margin-top: 48px; text-align: center; }
+    .contact-block h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); border-bottom: none; margin-bottom: 8px; padding-bottom: 0; }
+    .contact-block p { color: rgba(245,240,232,0.8); margin-bottom: 16px; }
+    .contact-block a { color: var(--cream); font-weight: 700; }
+    footer { border-top: 1px solid rgba(91,107,50,0.2); padding: 32px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; background: var(--cream); }
+    footer p { font-size: 0.8rem; color: var(--text-muted); }
+    footer .footer-links { display: flex; gap: 24px; }
+    footer .footer-links a { font-size: 0.8rem; color: var(--olive); text-decoration: none; }
+    footer .footer-links a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; } nav .nav-links { gap: 16px; }
+      .content { padding: 40px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo-mark" href="/">
+      <img src="/assets/logo.png" alt="Mallory Thread Theory" />
+      <span class="brand-name">Mallory Thread Theory</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://www.etsy.com/shop/mallorythreadtheory" target="_blank" rel="noopener">Shop</a></li>
+      <li><a href="/returns">Returns</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">Policies</p>
+    <h1>Returns &amp; Exchanges</h1>
+  </div>
+
+  <div class="content">
+    <div class="badge-row">
+      <span class="badge">Returns Accepted</span>
+      <span class="badge">Exchanges Accepted</span>
+    </div>
+
+    <div class="timeframe-callout">
+      <strong>Return Window</strong>
+      <p>Buyer must contact us and ship the item back within <strong>30 days of delivery</strong>.</p>
+    </div>
+
+    <h2>Conditions of Return</h2>
+    <div class="policy-block">
+      <ul>
+        <li>Buyer can return or exchange this item</li>
+        <li>Item must be returned within 30 days of delivery</li>
+        <li>Item must be in its original condition — unworn, unwashed, and with all original tags attached</li>
+        <li>Buyer is responsible for return shipping costs</li>
+        <li>Buyer is responsible for any loss in value if an item is not returned in original condition</li>
+      </ul>
+    </div>
+
+    <div class="section-gap">
+      <h2>How to Start a Return or Exchange</h2>
+      <p>To initiate a return or exchange, please contact us through our <a href="https://www.etsy.com/shop/mallorythreadtheory" target="_blank" rel="noopener" style="color:var(--olive);font-weight:700;">Etsy shop</a> or email us at <a href="mailto:jarod@mallorythreadtheory.com" style="color:var(--olive);font-weight:700;">jarod@mallorythreadtheory.com</a> with:</p>
+      <div class="policy-block">
+        <ul>
+          <li>Your order number</li>
+          <li>The item(s) you'd like to return or exchange</li>
+          <li>The reason for the return or exchange</li>
+        </ul>
+      </div>
+      <p>We'll respond within 1–2 business days with return instructions.</p>
+    </div>
+
+    <div class="section-gap">
+      <h2>Exceptions</h2>
+      <p>The following items cannot be returned or exchanged:</p>
+      <div class="policy-block">
+        <ul>
+          <li>Items that have been worn, washed, or damaged after delivery</li>
+          <li>Items returned more than 30 days after the delivery date</li>
+          <li>Custom or personalized orders</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-block">
+      <h2>Questions?</h2>
+      <p>We're happy to help. Reach out anytime.</p>
+      <a href="mailto:jarod@mallorythreadtheory.com">jarod@mallorythreadtheory.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Mallory Thread Theory. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/returns">Returns &amp; Exchanges</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="mailto:jarod@mallorythreadtheory.com">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>

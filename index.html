@@ -131,6 +131,247 @@
     <p class="signature">— Mallory Thread Theory</p>
   </section>
 
+  <style>
+  .category-section {
+    background-color: #F5F0E8;
+    padding: 4rem 2rem;
+    border-top: 1px solid #D8D0C0;
+    border-bottom: 1px solid #D8D0C0;
+  }
+
+  .category-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .category-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .category-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: #3D4A20;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.01em;
+  }
+
+  .category-header p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: #6A6A6A;
+  }
+
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .category-card {
+    background-color: #FFFFFF;
+    border: 1px solid #D8D0C0;
+    border-radius: 10px;
+    padding: 1rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .category-card:hover {
+    box-shadow: 0 4px 18px rgba(61, 74, 32, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .category-card-emoji {
+    font-size: 2rem;
+    flex-shrink: 0;
+    line-height: 1;
+    width: 2.5rem;
+    text-align: center;
+  }
+
+  .category-card-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .category-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #3D4A20;
+    line-height: 1.2;
+  }
+
+  .category-card-price {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.88rem;
+    color: #5B6B32;
+    font-weight: 700;
+    margin-top: 0.1rem;
+  }
+
+  .category-card-link {
+    display: inline-block;
+    flex-shrink: 0;
+    background-color: #5B6B32;
+    color: #F5F0E8;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+  }
+
+  .category-card-link:hover {
+    background-color: #3D4A20;
+  }
+
+  .category-etsy-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .category-etsy-cta a {
+    display: inline-block;
+    background-color: transparent;
+    color: #5B6B32;
+    border: 2px solid #5B6B32;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 0.7rem 1.75rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .category-etsy-cta a:hover {
+    background-color: #5B6B32;
+    color: #F5F0E8;
+  }
+
+  @media (max-width: 600px) {
+    .category-section {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .category-card {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .category-card-link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="category-section" aria-labelledby="category-section-heading">
+  <div class="category-inner">
+
+    <div class="category-header">
+      <h2 id="category-section-heading">Shop by Category</h2>
+      <p>Five product types. One personality.</p>
+    </div>
+
+    <ul class="category-list" role="list">
+
+      <li class="category-card">
+        <span class="category-card-emoji" aria-hidden="true">👕</span>
+        <div class="category-card-body">
+          <p class="category-card-name">T-Shirts</p>
+          <p class="category-card-price">$24.99</p>
+        </div>
+        <a href="https://www.etsy.com/shop/mallorythreadtheory?search_query=t-shirt"
+           class="category-card-link"
+           target="_blank"
+           rel="noopener noreferrer">
+          Shop
+        </a>
+      </li>
+
+      <li class="category-card">
+        <span class="category-card-emoji" aria-hidden="true">🧥</span>
+        <div class="category-card-body">
+          <p class="category-card-name">Hoodies</p>
+          <p class="category-card-price">$49.99</p>
+        </div>
+        <a href="https://www.etsy.com/shop/mallorythreadtheory?search_query=hoodie"
+           class="category-card-link"
+           target="_blank"
+           rel="noopener noreferrer">
+          Shop
+        </a>
+      </li>
+
+      <li class="category-card">
+        <span class="category-card-emoji" aria-hidden="true">☕</span>
+        <div class="category-card-body">
+          <p class="category-card-name">Mugs</p>
+          <p class="category-card-price">$19.99</p>
+        </div>
+        <a href="https://www.etsy.com/shop/mallorythreadtheory?search_query=mug"
+           class="category-card-link"
+           target="_blank"
+           rel="noopener noreferrer">
+          Shop
+        </a>
+      </li>
+
+      <li class="category-card">
+        <span class="category-card-emoji" aria-hidden="true">👜</span>
+        <div class="category-card-body">
+          <p class="category-card-name">Totes</p>
+          <p class="category-card-price">$34.99</p>
+        </div>
+        <a href="https://www.etsy.com/shop/mallorythreadtheory?search_query=tote"
+           class="category-card-link"
+           target="_blank"
+           rel="noopener noreferrer">
+          Shop
+        </a>
+      </li>
+
+      <li class="category-card">
+        <span class="category-card-emoji" aria-hidden="true">✨</span>
+        <div class="category-card-body">
+          <p class="category-card-name">Stickers</p>
+          <p class="category-card-price">From $6.99</p>
+        </div>
+        <a href="https://www.etsy.com/shop/mallorythreadtheory?search_query=sticker"
+           class="category-card-link"
+           target="_blank"
+           rel="noopener noreferrer">
+          Shop
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="category-etsy-cta">
+      <a href="https://www.etsy.com/shop/mallorythreadtheory"
+         target="_blank"
+         rel="noopener noreferrer">
+        Browse All Designs on Etsy &rarr;
+      </a>
+    </div>
+
+  </div>
+</section>
   <section class="cta-section">
     <h2>Shop the Collection</h2>
     <p>T-shirts, hoodies, mugs, totes, and stickers — all with personality.</p>
